@@ -1,57 +1,93 @@
-# EduMind AI
+# 🎓 EduMind AI
+### Your Personal AI-Powered Learning Companion
 
-EduMind AI is an AI-powered education platform that connects:
+<p align="center">
 
-- Quiz Generator
-- Flashcards
-- Assignment Generator
-- Chat with Lecture PDFs
-- Student Progress Dashboard
-- Personalized Learning
+  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/LangChain-RAG-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
+  <img src="https://img.shields.io/badge/LangGraph-Workflows-1C3C3C?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Groq-LLM-F55036?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/FAISS-Vector_Search-00ADD8?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/SQLite-User_Analytics-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
 
-The app stores learner activity in a local SQLite database, so quiz scores,
-flashcard reviews, PDF questions, and assignments dynamically update the
-dashboard and the personalized learning recommendations.
+</p>
 
-## Setup
+<p align="center">
+  <strong>EduMind doesn't just generate educational content — it learns how you learn.</strong>
+</p>
 
-```bash
-pip install -r requirements.txt
-copy .env.example .env
-python -m streamlit run app.py
-```
+---
 
-Add an OpenAI key to `.env` for live AI generation:
+## 🌟 What is EduMind?
 
-```env
-OPENAI_API_KEY=your_real_key_here
-OPENAI_MODEL=gpt-4o-mini
-```
+**EduMind AI** is an AI-powered personalized learning platform designed to transform traditional studying into an **adaptive, data-driven learning experience**.
 
-Without an API key, the platform still runs with local fallback generators so
-the full product can be tested.
+Instead of treating every student the same, EduMind analyzes the learner's activity, identifies **weak and strong topics**, monitors learning consistency, and generates personalized study recommendations.
 
-## Data
+At the same time, students can interact directly with their lecture materials through **RAG-powered PDF conversations**, generate quizzes and flashcards, create assignments, and monitor their progress from a unified dashboard.
 
-Runtime activity is saved to:
+### The core idea
+
+> **Learn → Practice → Analyze → Personalize → Improve**
+
+EduMind continuously uses the learner's previous activity to determine **what they should study next**.
+
+---
+
+# 🚀 Key Features
+
+## 🧠 1. AI-Powered Quiz Generator
+
+Generate quizzes based on educational content while controlling:
+
+- 📚 Topic
+- 🎯 Student level
+- 📈 Difficulty
+- 🔢 Number of questions
+
+Quiz activity is stored and later used by the personalization engine to analyze performance.
+
+---
+
+## 🃏 2. Intelligent Flashcards
+
+Turn learning material into flashcards designed for active recall.
+
+The system generates:
+
+- Key concepts
+- Definitions
+- Important facts
+- Concept explanations
+
+Flashcard activity contributes to the learner's overall engagement profile.
+
+---
+
+## ✍️ 3. AI Assignment Generator
+
+EduMind can generate structured assignments based on supplied educational material.
+
+The assignment workflow uses **LangGraph** to create a multi-step generation and review process:
 
 ```text
-edumind_activity.sqlite3
-```
-
-This file is created automatically the first time the app runs.
-
-## Project structure
-
-```text
-app.py                    Main Streamlit entry point and page router
-edumind/config.py         App settings, paths, and navigation labels
-edumind/styles.py         Shared CSS styling
-edumind/storage.py        Login, SQLite database, activity events, PDF notes
-edumind/ai.py             OpenAI helper and JSON parsing
-edumind/generators.py     Quiz, flashcard, and assignment generators
-edumind/pdf_tools.py      PDF text extraction and lecture Q&A helper
-edumind/personalization.py Weak topics, strong topics, and study plan logic
-edumind/ui.py             Login screen, sidebar, and page header helpers
-edumind/pages/            One file per app screen
-```
+                 ┌──────────────────┐
+                 │   Source Material │
+                 └────────┬─────────┘
+                          ↓
+                 ┌──────────────────┐
+                 │ Generate Draft   │
+                 └────────┬─────────┘
+                          ↓
+                 ┌──────────────────┐
+                 │   AI Reviewer    │
+                 └────────┬─────────┘
+                          ↓
+                    ┌─────┴─────┐
+                    │ Approved? │
+                    └─────┬─────┘
+                      Yes │ No
+                          │  └──────────→ Improve
+                          ↓
+                     Final Assignment
