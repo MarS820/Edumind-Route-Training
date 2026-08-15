@@ -17,6 +17,40 @@
   <strong>EduMind doesn't just generate educational content — it learns how you learn.</strong>
 </p>
 
+<p align="center">
+
+### 🚀 <a href="https://edumind-train.streamlit.app/">TRY THE LIVE DEMO</a> 🚀
+
+</p>
+
+<p align="center">
+  <a href="https://edumind-train.streamlit.app/">
+    <img src="https://img.shields.io/badge/🌐_Live_Demo-EduMind-FF4B4B?style=for-the-badge" />
+  </a>
+</p>
+
+---
+
+## 🌐 Live Demo
+
+### 🚀 Experience EduMind Online
+
+You can try the deployed application directly without installing anything:
+
+**👉 https://edumind-train.streamlit.app/**
+
+The live application allows you to explore EduMind's core functionality, including:
+
+- 🧠 AI Quiz Generation
+- 🃏 Flashcard Generation
+- ✍️ Assignment Generation
+- 📄 Chat with Lecture PDFs
+- 📊 Learning Progress Dashboard
+- 🎯 Personalized Learning Recommendations
+- 🤖 AI-powered educational assistance
+
+> **Note:** The live demo may require a short loading time when the Streamlit application is waking up.
+
 ---
 
 ## 🌟 What is EduMind?
@@ -30,64 +64,3 @@ At the same time, students can interact directly with their lecture materials th
 ### The core idea
 
 > **Learn → Practice → Analyze → Personalize → Improve**
-
-EduMind continuously uses the learner's previous activity to determine **what they should study next**.
-
----
-
-# 🚀 Key Features
-
-## 🧠 1. AI-Powered Quiz Generator
-
-Generate quizzes based on educational content while controlling:
-
-- 📚 Topic
-- 🎯 Student level
-- 📈 Difficulty
-- 🔢 Number of questions
-
-Quiz activity is stored and later used by the personalization engine to analyze performance.
-
----
-
-## 🃏 2. Intelligent Flashcards
-
-Turn learning material into flashcards designed for active recall.
-
-The system generates:
-
-- Key concepts
-- Definitions
-- Important facts
-- Concept explanations
-
-Flashcard activity contributes to the learner's overall engagement profile.
-
----
-
-## ✍️ 3. AI Assignment Generator
-
-EduMind can generate structured assignments based on supplied educational material.
-
-The assignment workflow uses **LangGraph** to create a multi-step generation and review process:
-
-```text
-                 ┌──────────────────┐
-                 │   Source Material │
-                 └────────┬─────────┘
-                          ↓
-                 ┌──────────────────┐
-                 │ Generate Draft   │
-                 └────────┬─────────┘
-                          ↓
-                 ┌──────────────────┐
-                 │   AI Reviewer    │
-                 └────────┬─────────┘
-                          ↓
-                    ┌─────┴─────┐
-                    │ Approved? │
-                    └─────┬─────┘
-                      Yes │ No
-                          │  └──────────→ Improve
-                          ↓
-                     Final Assignment
