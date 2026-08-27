@@ -65,7 +65,7 @@ def _get_structured_quiz_model(api_key: Optional[str] = None):
     if key in _QUIZ_MODEL_CACHE:
         return _QUIZ_MODEL_CACHE[key]
 
-    model_name = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+    model_name = os.getenv("GROQ_MODEL", "qwen/qwen3.6-27b")
 
     base_model = ChatGroq(
         model=model_name,
