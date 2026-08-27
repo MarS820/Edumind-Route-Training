@@ -112,7 +112,7 @@ Return a JSON object with this exact shape:
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="qwen/qwen3.6-27b",
             messages=[
                 {
                     "role": "system",
@@ -183,7 +183,7 @@ class ReviewResult(BaseModel):
 
 @lru_cache(maxsize=8)
 def build_assignment_graph(
-    model_name: str = "llama-3.3-70b-versatile",
+    model_name: str = "qwen/qwen3.6-27b",
     api_key: str | None = None,
 ):
     model = ChatGroq(
