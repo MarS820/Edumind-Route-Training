@@ -16,7 +16,7 @@ except Exception:  # pragma: no cover - optional at runtime
 def ai_client() -> Any | None:
     if Groq is None:
         return None
-    api_key = st.session_state.get("groq_api_key") or os.getenv("GROQ_API_KEY")
+    api_key = st.session_state.get("groq_api_key") or st.secrets.get("GROQ_API_KEY")
     if not api_key:
         return None
     return Groq(api_key=api_key)
