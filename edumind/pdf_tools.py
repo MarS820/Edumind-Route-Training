@@ -29,7 +29,7 @@ def get_groq_llm(streaming: bool = False, temperature: float = 0.2):
     if not api_key:
         raise ValueError("Groq API Key is missing! Please configure GROQ_API_KEY in Streamlit Secrets.")
 
-    groq_model = st.secrets.get("GROQ_MODEL", os.getenv("GROQ_MODEL", "llama-3.1-8b-instant"))
+    groq_model = st.secrets.get("GROQ_MODEL", os.getenv("GROQ_MODEL", "qwen/qwen3.6-27b"))
 
     return ChatGroq(
         groq_api_key=api_key,
